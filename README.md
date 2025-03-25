@@ -33,14 +33,10 @@ Volume practical
     9  ls
    10  ls mnt
    11  ls /mnt
-   12  mnt -a /mnt/data /dev/xvdbf1
-   13  mnt -a /mnt/data dev/xvdbf1
-   14  mnt -a mnt/data dev/xvdbf1
-   15  mount -a mnt/data dev/xvdbf1
    16  lsblk
-   17  mount -a mnt/data /dev/xvdbf1
+   17  
    18  lsblk
-   19  mount -a mnt/data /dev/xvdbf2
+   19  
    20  lsblk
    21  mount /dev/xvdbf1 /mnt/data
    22  mount /dev/xvdbf1 /mnt/data/
