@@ -49,8 +49,7 @@ Volume practical
    29  history
    30  mkfs -t ext3 /dev/xvdbf1 -------to format particular disk/partition
    31  mount /dev/xvdbf1 /mnt/data/
-   32  lsblk
-   33  history
+   32  lsblk-------- to check all the partition created
 
 
 
