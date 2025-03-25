@@ -15,8 +15,8 @@ Volume practical
 1  sudo
     2  sudo -i
     3  lsblk
-    4  fdosk /dev/xvdbf
-    5  fdisk /dev/xvdbf
+    4  
+    5  fdisk /dev/xvdbf ---- used to create, delete, and manage disk partitions, allowing you to manipulate the partition table on a hard disk
     6  lsblk
     7  ls
     8  mkdir /mnt/data
@@ -40,6 +40,12 @@ Volume practical
    30  mkfs -t ext3 /dev/xvdbf1 -------to format particular disk/partition
    31  mount /dev/xvdbf1 /mnt/data/
    32  lsblk-------- to check all the partition created
+
+Explanation-
+1- In this practical we firstly create a volume in aws.
+2- connect that volume to instance.
+3- in the terminal we then create partitions for the volume.
+4- suppose if we create two additional partition volumes of 2 gb and 4gb then if we want to mount some directories in the created partiton then first we need to format the created partition here which is 4 gb, then we mount the directory on the partiton. 
 
 
 
