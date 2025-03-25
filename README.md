@@ -47,7 +47,7 @@ Volume practical
    27  mount /dev/xvdbf1 /mnt/data/
    28  lsblk
    29  history
-   30  mkfs -t ext3 /dev/xvdbf1
+   30  mkfs -t ext3 /dev/xvdbf1 -------to format particular disk/partition
    31  mount /dev/xvdbf1 /mnt/data/
    32  lsblk
    33  history
