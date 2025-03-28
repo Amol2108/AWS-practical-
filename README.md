@@ -11,7 +11,7 @@ PING 13.201.82.118 (13.201.82.118) 56(84) bytes of data.
 
 
 -------------------------------------25-3-2025------------------------
-Volume practical
+Volume practical---------temporary mounting
 1  sudo
     2  sudo -i
     3  lsblk
@@ -46,6 +46,87 @@ Explanation-
 2- connect that volume to instance.
 3- in the terminal we then create partitions for the volume.
 4- suppose if we create two additional partition volumes of 2 gb and 4gb then if we want to mount some directories in the created partiton then first we need to format the created partition here which is 4 gb, then we mount the directory on the partiton. 
+
+----------------------------------------------------27-03-2025----------------------------------------------------
+Practical for permanent mounting
+ 1  lsblk
+    2  pv /dev/xvdbf
+    3  pv /dev/xvdbf1
+    4  pvcreate /dev/xvdbf
+    5  pvdisplay
+    6  vgcreate my-vg /dev/xvdbf1
+    7  lsblk
+    8  pvdisplay
+    9  vgcreate my-vg /dev/xvdbf
+   10  vgdisplay
+   11  fdisk /dev/xvdbf
+   12  lsblk
+   13  exit
+   14  lsblk
+   15  pvdisplay
+   16  vgdisplay
+   17  pvcreate /dev/xvdbf1
+   18  pvdisplay
+   19  vgcreate my-vg /dev/xvdbf1
+   20  lvcreate -L 4.5G -n my-lv my-vg
+   21  lvdisplay
+   22  blkid
+   23  mkdir data
+   24  ls
+   25  rmdir data
+   26  ls
+   27  mkdir /mnt/data
+   28  mount /dev/my-vg/my-lv /mnt/data
+   29  mount /dev/my-vg/my-lv mnt/data
+   30  mount dev/my-vg/my-lv mnt/data
+   31  mount dev/my-vg/my-lv mnt/data/
+   32  mount /dev/my-vg/my-lv /mnt/data/
+   33  lsblk
+   34  vgdisplay
+   35  mount /dev/my-vg/my-lv /data
+   36  ls
+   37  mkdir /mnt/data
+   38  rmdir data
+   39  rmdir /mnt/data
+   40  l
+   41  ls
+   42  mkdir /mnt/data
+   43  ls
+   44  ls /mnt
+   45  mount /dev/my-vg/my-lv /mnt/data
+   46  rmdir /mnt/data
+   47  ls /mnt
+   48  mkdir data
+   49  mount /dev/my-vg/my-lv /root/data
+   50  mkfs.ext3 /dev/my-vg/my-lv
+   51  mount /dev/my-vg/my-lv /root/data
+   52  ls
+   53  lsblk
+   54  nano /etc/fstab
+   55  blkid
+   56  nano /etc/fstab
+   57  mount -a
+   58  lsblk
+   59  nano /etc/fstab
+   60  history
+Explanation---
+step-1: create a instance and volume of 10GB then attach volume to instance.
+step-2: login to terminal and create a physical volume with pv
+step-3: create a volume group
+step-4: create a logical volume
+step-5: format the partition which is created(DO NOT FORMAT WHOLE VOLUME OR ELSE WE WONT BE ABLE TO CREATE ANY PARTITION).
+step-6: create a directory and mount it on the created partiton.
+step-7: go to /etc/fstab and give the path of the created partition and directroy along with extension type used and the id of partition.
+ex- /dev/xvdbf1 /mnt/data ext3 <id of partition>
+step-8: now using mount -a we make sure it is permanently mounted.
+step-9: using lsblk we can now check the permanent mounting done on the partiton.
+---------------------------------------------28-03-2025--------------------------------------------------------------------------------
+Practical for EFS-
+
+
+
+
+
 
 
 
