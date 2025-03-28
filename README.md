@@ -48,7 +48,7 @@ Explanation-
 4- suppose if we create two additional partition volumes of 2 gb and 4gb then if we want to mount some directories in the created partiton then first we need to format the created partition here which is 4 gb, then we mount the directory on the partiton. 
 
 ----------------------------------------------------27-03-2025----------------------------------------------------
-Practical for permanent mounting
+Practical for permanent mounting-- EBS (Elastic Block Storage)-
  1  lsblk
     2  pv /dev/xvdbf
     3  pv /dev/xvdbf1
@@ -121,7 +121,12 @@ ex- /dev/xvdbf1 /mnt/data ext3 <id of partition>
 step-8: now using mount -a we make sure it is permanently mounted.
 step-9: using lsblk we can now check the permanent mounting done on the partiton.
 ---------------------------------------------28-03-2025--------------------------------------------------------------------------------
-Practical for EFS-
+Practical for EFS- (Elastic File System)-
+
+
+
+
+
 
 
 
