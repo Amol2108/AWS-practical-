@@ -122,6 +122,7 @@ step-8: now using mount -a we make sure it is permanently mounted.
 step-9: using lsblk we can now check the permanent mounting done on the partiton.
 ---------------------------------------------28-03-2025--------------------------------------------------------------------------------
 Practical for EFS- (Elastic File System)-
+just for linux terminal commands-
   1  yum install nfs-common
     2  update
     3  apt update
