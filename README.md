@@ -122,6 +122,27 @@ step-8: now using mount -a we make sure it is permanently mounted.
 step-9: using lsblk we can now check the permanent mounting done on the partiton.
 ---------------------------------------------28-03-2025--------------------------------------------------------------------------------
 Practical for EFS- (Elastic File System)-
+  1  yum install nfs-common
+    2  update
+    3  apt update
+    4  apt install nfs-common
+    5  mkdir efs
+    6  ls
+    7  sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 172.31.43.43:/ efs
+    8  cd efs/
+    9  ls
+   10  cd
+   11  exit
+   12  history
+Explanation-
+step-1: create two instances in same region with name efs1 and efs2, efs1 will be in ap-south-1a and efs2 will be in ap-south-1b.
+step-2: connect the two instances in two different terminals and install nfs-common in both the terminal.
+step-3: create a directory called efs in both terminals.
+step-4: Now create efs file system and click on attach > we will get a window with mount ip and other option always click on mount ip and copy the code in it and paste it in both the terminals.
+step-5: now create a file in any of the directory in any terminal, so the file should be visible in the other terminal as well, if this happens the practical succesful.
+[PS- we create efs directory because the code we are copying has efs in it, we can also change the name as per our requirement]
+
+--------------------------------------------------------------------------------------------------------------------------------------
 
 
 
