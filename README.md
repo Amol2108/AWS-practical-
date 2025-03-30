@@ -140,7 +140,7 @@ step-1: create two instances in same region with name efs1 and efs2, efs1 will b
 step-2: connect the two instances in two different terminals and install nfs-common in both the terminal.
 step-3: create a directory called efs in both terminals.
 step-4: Now create efs file system and click on attach > we will get a window with mount ip and other option always click on mount ip and copy the code in it and paste it in both the terminals.
-step-5: now create a file in any of the directory in any terminal, so the file should be visible in the other terminal as well, if this happens the practical succesful.
+step-5: now create a file in any of the directory in any terminal, so the file should be visible in the other terminal as well, if this happens the practical is succesful.
 [PS- we create efs directory because the code we are copying has efs in it, we can also change the name as per our requirement]
 
 --------------------------------------------------------------------------------------------------------------------------------------
