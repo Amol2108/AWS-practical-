@@ -143,7 +143,47 @@ step-4: Now create efs file system and in network section always select the crea
 step-5: now create a file in any of the directory in any terminal, so the file should be visible in the other terminal as well, if this happens the practical is succesful.
 [PS- we create efs directory because the code we are copying has efs in it, we can also change the name as per our requirement]
 
---------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------03/04/2025---------------------------------------------------------------------
+PRACTICAL FOR VPC PEERING:-
+Step 1:-
+create a VPC- 
+ 
+ Step 2:-
+Create 2 subnets one public and private, set CIDR values with caution as we need to communicate outside the region so the CDIR/IP’s should never overlap each other.
+ 
+Step 3:-
+Create a Internet Gateway and attach to the user created VPC.
+ 
+Step 4:-
+Create a NGW(Nat-gateway), while creating attach the NGW to public subnet. Allocate elastic Ip to NGW always while creating.
+ 
+Step 5:- Creating Route Tables
+1-	Create route table, one public and other private.
+2-	Add internet gateway to public route.
+3-	Add Nat-gateway to private route.
+4-	Edit subnet association of public route to public subnet.
+5-	Edit subnet association of private route to private subnet. 
+
+Step 6:- Creating two Ec2 instances.
+1-	Create one public ec2 instance in one AZ(availability zones), the security group should be all traffic.
+2-	Create another private ec2 instance in other AZ, security group should be same which is used in public instance.
+  
+Step 7:- Create VPC Peering
+1-	Create VPC peering between two regions one will be requester and other will be receiver.
+2-	Add the details through the form and create VPC peering.
+3-	A VPC peering can be done in-
+1-	Same region same account
+2-	Different region same account
+3-	Different region different account.
+ 
+ NOW FOR CONNECTING PUBLIC INSTANCE TO PRIVATE INSTANCE OF DIFFERENT REGIONS-
+1-	IN THE PUBLIC ROUTE TABLE, WE NEED TO ADD BOTH THE IP’S OF THE INSTANCES CREATED IN DIFFERENT REGION
+Ex- PUBLIC INSTANCE IN MUMBAI REGION WANTS TO CONNECT WITH THE PRIVATE INSTANCE CREATED IN NORTH VIRIGINIA.
+2-	SO INORDER TO ESTABLISH THEIR CONNECTION FIRSTLY WE ADD IP’S OF BOTH THE INSTANCES IN PUBLIC AND PRIVATE ROUTES OF MUMBAI REGIONS, FOLLOW THE IMAGE BELOW FOR THE SEQUENCE TO ADD ROUTE FOR THE IP’S.
+------------------------------------------------------------------------------------------------------------------
+
+ 
+
 
 
 
