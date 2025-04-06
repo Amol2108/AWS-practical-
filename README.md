@@ -12,7 +12,8 @@ PING 13.201.82.118 (13.201.82.118) 56(84) bytes of data.
 
 -------------------------------------25-3-2025------------------------
 Volume practical---------temporary mounting
-1  sudo
+--After we create volume we need to attach it to the instance and give device name, so that device name will be searched by using /dev/"device name".
+    1  sudo
     2  sudo -i
     3  lsblk
     4  
