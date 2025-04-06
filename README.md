@@ -71,7 +71,7 @@ Practical for permanent mounting-- EBS (Elastic Block Storage)-
    19  vgcreate my-vg /dev/xvdbf1
    20  lvcreate -L 4.5G -n my-lv my-vg
    21  lvdisplay
-   22  blkid
+   22  blkid ---USE TO COPY ID OF THE PARTITION CREATED TO PERMANENTLY MOUNT THE DISK
    23  mkdir data
    24  ls
    25  rmdir data
@@ -105,7 +105,8 @@ Practical for permanent mounting-- EBS (Elastic Block Storage)-
    53  lsblk
    54  nano /etc/fstab
    55  blkid
-   56  nano /etc/fstab
+   56  nano /etc/fstab --HERE WE MOUNT THE DISK BY " 
+   /MNT/DATA /DEV/XVDBF1 EXT3(EXTENSION USED TO MAKE PARTITON OF DISK) ID(OF THE DISK WHICH WE GOT FROM BLKID)
    57  mount -a
    58  lsblk
    59  nano /etc/fstab
