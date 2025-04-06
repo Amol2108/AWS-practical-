@@ -107,7 +107,7 @@ Practical for permanent mounting-- EBS (Elastic Block Storage)-
    55  blkid
    56  nano /etc/fstab --HERE WE MOUNT THE DISK BY " 
    /MNT/DATA /DEV/XVDBF1 EXT3(EXTENSION USED TO MAKE PARTITON OF DISK) ID(OF THE DISK WHICH WE GOT FROM BLKID)
-   57  mount -a
+   57  mount -a --TO SAVE THE PERMANENT MOUNTING OF THE DISK
    58  lsblk
    59  nano /etc/fstab
    60  history
@@ -124,6 +124,8 @@ step-8: now using mount -a we make sure it is permanently mounted.
 step-9: using lsblk we can now check the permanent mounting done on the partiton.
 ---------------------------------------------28-03-2025--------------------------------------------------------------------------------
 Practical for EFS- (Elastic File System)-
+QUE- Why use EFS- 
+ANS- we use EFS so that when we create two instances in two different regions and we want to connect them in as in if we create a file in one instance then automatically we should see the file in other instance, means they are connected to each other.
 just for linux terminal commands-
   1  yum install nfs-common
     2  update
@@ -138,10 +140,15 @@ just for linux terminal commands-
    11  exit
    12  history
 Explanation-
-step-1: create secuiryt group with inbound rules as 1- SSH : 2- HTTP : 3- NFS and for outbound rules keep it all traffic then create two instances in same region with name efs1 and efs2, efs1 will be in ap-south-1a and efs2 will be in ap-south-1b.
+step-1: create security group with inbound rules as 
+1- SSH : 
+2- HTTP : 
+3- NFS :
+and for outbound rules keep it all traffic then create two instances in same region with name efs1 and efs2, efs1 will be in ap-south-1a and efs2 will be in ap-south-1b.
 step-2: connect the two instances in two different terminals and install nfs-common in both the terminal.
 step-3: create a directory called efs in both terminals.
-step-4: Now create efs file system and in network section always select the created secuirty group and save it click on attach > we will get a window with mount ip and other option always click on mount ip and copy the code in it and paste it in both the terminals.
+step-4: Now create efs file system and in network section always select the created secuirty group and save it.
+click on attach > we will get a window with mount ip and other option always click on mount ip and copy the code in it and paste it in both the terminals.
 step-5: now create a file in any of the directory in any terminal, so the file should be visible in the other terminal as well, if this happens the practical is succesful.
 [PS- we create efs directory because the code we are copying has efs in it, we can also change the name as per our requirement]
 
